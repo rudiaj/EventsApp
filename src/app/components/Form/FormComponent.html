@@ -1,0 +1,32 @@
+<div class="card">
+  <h3 class="title">Add new event</h3>
+  <form ng-submit="vm.addEvent()" novalidate="" name="addEvent" autocomplete="off" class="form">
+    <div class="input-container">
+    <label for="name">Event name: *</label>
+    <input id="name" type="text" ng-model="vm.newEvent.name" required="true" name="eventName" value="Event name" class="input-element">
+    </div>
+    <div class="input-container">
+    <label for="dateStart">Start date: *</label>
+    <input id="dateStart" type="date" ng-model="vm.newEvent.date_start" required="true" name="startDate" value="Event start date" class="input-element">
+    </div>
+    <div class="input-container">
+    <label for="dateEnd">End date:</label>
+    <input id="dateEnd" type="date" ng-model="vm.newEvent.date_end" name="endDate" value="Event end date" class="input-element">
+    </div>
+    <div class="input-container">
+    <label for="description">Short description: *</label>
+    <input id="description" type="text" ng-model="vm.newEvent.description" required="true" name="eventDescription" value="Event description" class="input-element">
+    </div>
+    <div class="input-container">
+    <label for="description">Text:</label>
+    <textarea class="input-element text-area"
+              id="text"
+              ng-model="vm.newEvent.text"
+              rows="4">
+</textarea>
+    </div>
+    <div class="button-container">
+    <input type="submit" ng-disabled="addEvent.$invalid " class="input-element button" name="submit" ng-class="{'button-disabled': addEvent.$invalid}">
+    </div>
+  </form>
+</div>

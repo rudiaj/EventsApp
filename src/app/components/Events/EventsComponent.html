@@ -1,0 +1,24 @@
+<div class="event-card-container">
+  <div class="event-card" ng-repeat="event in vm.eventService.events track by event.id">
+    <div class="card-heading">
+      <h4 class="card-title">{{event.name}}</h4>
+      <div class="date-wrapper">
+        <span class="card-date">{{event.date_start}}</span>
+        <span class="card-date" ng-if="event.date_end">- {{event.date_end}}</span>
+      </div>
+    </div>
+    <div class="card-inner-wrapper">
+      <div class="card-body">
+        <span class="subtitle">Description:</span>
+        <span class="description">{{event.description}}</span>
+      </div>
+      <div class="card-text-wrapper" ng-if="event.text">
+        <span class="card-action" ng-click="vm.showText = !vm.showText">View more</span>
+        <p class="card-text" ng-show="vm.showText">{{event.text}}</p>
+      </div>
+      <div class="card-footer">
+        <button class="button card-button" ng-click="vm.eventService.deleteEvent(event.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

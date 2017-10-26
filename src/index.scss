@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.nav-bar {
+  background-color: #3C4858;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .nav {
+    -webkit-padding-start: initial;
+    list-style: none;
+    display: flex;
+    .nav-item {
+      margin: 0 20px;
+      a {
+        transition: all 0.1s ease-in-out;
+        color: rgba(255, 255, 255, 0.8);
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+      a.active {
+        color: rgba(255, 70, 70, 1);
+      }
+    }
+  }
+}
+
+.main-container {
+  display: flex;
+  min-height: 100%;
+  background-color: #f0f2f1;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 15px;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 15px;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
+}
+
+.event-card-container {
+  width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  .event-card {
+    @extend .card;
+    min-width: 300px;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+    .card-heading {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100px;
+      padding: 15px;
+      background-color: #FF469C;
+      background-image: linear-gradient(90deg, #FF469C 0, #FF4646 100%);
+      .card-title {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 1);
+      }
+      .date-wrapper {
+        .card-date {
+          font-size: 12px;
+        }
+      }
+    }
+    .card-inner-wrapper{
+      display: flex;
+      flex-direction: column;
+      height:100%;
+      justify-content: space-between;
+      .card-body {
+        color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+        .subtitle {
+          margin-bottom: 8px;
+          font-weight: 600;
+        }
+        .description {
+          font-size: 14px;
+        }
+      }
+      .card-text-wrapper {
+        @extend .card-body;
+        .card-action {
+          cursor: pointer;
+          color: #FF4646;
+        }
+      }
+      .card-footer {
+        @extend .card-body;
+        align-items: flex-end;
+        .card-button {
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          font-weight: 600;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 32px;
+          width: 100px;
+          min-width: initial;
+          border: 2px solid transparent;
+          border-radius: 2px;
+          background-color: #FF469C;
+          background-image: linear-gradient(90deg, #FF469C 0, #FF4646 100%);
+          color: white;
+          box-shadow: none;
+          &:hover {
+            background-color: #3C4858;
+            background-image: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  .input-container {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 14px;
+    }
+  }
+  .input-element {
+    transition: all 0.2s ease-in-out;
+    height: 20px;
+    padding: 5px 10px;
+    min-width: 300px;
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: #3C4858;
+    border: 1px solid transparent;
+    border-radius: 2px;
+  }
+  .text-area {
+    height: initial;
+  }
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    .button {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 32px;
+      width: 100px;
+      min-width: initial;
+      border: 2px solid transparent;
+      border-radius: 2px;
+      background-color: #FF469C;
+      background-image: linear-gradient(90deg, #FF469C 0, #FF4646 100%);
+      color: white;
+      box-shadow: none;
+      &:hover {
+        background-color: #3C4858;
+        background-image: none;
+      }
+    }
+    .button-disabled {
+      cursor: not-allowed;
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.title {
+  font-size: 20px;
+  margin: 0 0 30px 0;
+  color: #FF4646;
+  font-weight: 600;
+  background: -webkit-linear-gradient(#FF469C, #FF4646);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
